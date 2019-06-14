@@ -29,7 +29,7 @@ int romanToInt(char * s){
         }
     }
     for(int j=0;j<strlen(s);j++){
-        if(j>0&&ele[j]<ele[j+1]){
+        if(j!=strlen(s)-1&&ele[j]<ele[j+1]){
             ans = ans - ele[j];
         }
         else{
@@ -37,5 +37,4 @@ int romanToInt(char * s){
         }
     }
     return ans;
-
 }
