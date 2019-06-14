@@ -1,0 +1,41 @@
+
+
+int romanToInt(char * s){
+    int ele[strlen(s)+1];
+    int ans=0;
+    for(int i=0;i<strlen(s);i++){
+        switch(s[i]){
+            case 'I':
+                ele[i] = 1;
+                break;
+            case 'V':
+                ele[i] = 5;
+                break;
+            case 'X':
+                ele[i] = 10;
+                break;
+            case 'L':
+                ele[i] = 50;
+                break;
+            case 'C':
+                ele[i] = 100;
+                break;
+            case 'D':
+                ele[i] = 500;
+                break;
+            case 'M':
+                ele[i] = 1000;
+                break;  
+        }
+    }
+    for(int j=0;j<strlen(s);j++){
+        if(j>0&&ele[j]<ele[j+1]){
+            ans = ans - ele[j];
+        }
+        else{
+            ans = ans + ele[j];
+        }
+    }
+    return ans;
+
+}
